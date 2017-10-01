@@ -6,6 +6,8 @@
     "ordered-imports": false,
     "no-string-literal": false,
     "no-trailing-whitespace": true,
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "no-empty": false,
+    "max-line-length": 120
   }
 }
