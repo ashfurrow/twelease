@@ -1,0 +1,60 @@
+{
+  "name": "new-project",
+  "version": "0.0.1",
+  "description": "Autotweeting ne GitHub releases.",
+  "main": "index.ts",
+  "author": "Ash Furrow <ash@ashfurrow.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "eslint": "^4.8.0",
+    "express": "^4.16.1",
+    "github": "^11.0.0",
+    "morgan": "^1.9.0",
+    "path": "^0.12.7",
+    "prettier": "^1.7.3",
+    "typescript": "^2.5.3"
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "prettier-project": "prettier --write '**/*.js'",
+    "type-check": "tsc --noEmit --pretty",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "lint": "tslint src/**/*.ts",
+    "prettier": "prettier"
+  },
+  "jest": {
+    "globals": {
+      "__TS_CONFIG__": "tsconfig.json"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "./node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/test/**/*.test.(ts|js)"
+    ],
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.16.5",
+    "@types/debug": "^0.0.30",
+    "@types/express": "^4.0.37",
+    "@types/jest": "^21.1.1",
+    "@types/morgan": "^1.7.33",
+    "@types/node": "^8.0.31",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.1.1",
+    "jest": "^21.2.1",
+    "nodemon": "^1.12.1",
+    "ts-jest": "^21.0.1",
+    "ts-node": "^3.3.0",
+    "tslint-config-prettier": "^1.5.0"
+  }
+}
