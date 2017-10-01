@@ -1,7 +1,7 @@
-import * as path from 'path';
+import * as bodyParser from 'body-parser';
 import * as express from 'express';
 import * as logger from 'morgan';
-import * as bodyParser from 'body-parser';
+import * as path from 'path';
 
 // Creates and configures an ExpressJS web server.
 class App {
@@ -9,7 +9,7 @@ class App {
   // ref to Express instance
   public express: express.Application;
 
-  //Run configuration methods on the Express instance.
+  // Run configuration methods on the Express instance.
   constructor() {
     this.express = express();
     this.middleware();
@@ -25,17 +25,18 @@ class App {
 
   // Configure API endpoints.
   private routes(): void {
-    /* This is just to get up and running, and to make sure what we've got is
-     * working so far. This function will change when we start to add more
-     * API endpoints */
-    let router = express.Router();
-    // placeholder route handler
+    const router = express.Router();
     router.get('/', (req, res, next) => {
       res.json({
         message: 'Hello World!'
       });
-    });
-    this.express.use('/', router);
+    })
+    router.post(process.env.WEBHOOK_ENDPOINT, (req, res, next) => {
+      res.json({
+        message: 'Hello World!'
+      });
+    })
+    this.express.use('/', router)
   }
 
 }

@@ -25,21 +25,18 @@
     "lint": "tslint src/**/*.ts",
     "prettier": "prettier"
   },
+  "lint-staged": {
+    "*.{js,json,css}": ["prettier --write", "git add"]
+  },
   "jest": {
     "globals": {
       "__TS_CONFIG__": "tsconfig.json"
     },
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js"],
     "transform": {
       "^.+\\.(ts|tsx)$": "./node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": [
-      "**/test/**/*.test.(ts|js)"
-    ],
+    "testMatch": ["**/test/**/*.test.(ts|js)"],
     "testEnvironment": "node"
   },
   "devDependencies": {
@@ -49,12 +46,16 @@
     "@types/jest": "^21.1.1",
     "@types/morgan": "^1.7.33",
     "@types/node": "^8.0.31",
+    "eslint-plugin-prettier": "^2.3.1",
     "gulp": "^3.9.1",
     "gulp-typescript": "^3.1.1",
+    "husky": "^0.14.3",
     "jest": "^21.2.1",
+    "lint-staged": "^4.2.3",
     "nodemon": "^1.12.1",
     "ts-jest": "^21.0.1",
     "ts-node": "^3.3.0",
+    "tslint": "^5.7.0",
     "tslint-config-prettier": "^1.5.0"
   }
 }
