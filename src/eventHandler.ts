@@ -4,6 +4,7 @@ import tweet from './twitter'
 const handleNewTag = (tagName: string, pusherName: string, repoURL: string): void => {
   console.log(`${pusherName} pushed new tag ${tagName}`)
   const template = process.env['TWEET_MUSTACHE_TEMPLATE']
+  Mustache.escapeHtml = (text) => text
   const tweetText = Mustache.render(template, {tagName, pusherName, repoURL})
   tweet(tweetText)
 }
