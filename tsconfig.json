@@ -3,7 +3,8 @@
     "target": "es6",
     "module": "commonjs",
     "noImplicitAny": false,
-    "outDir": "dist"
+    "outDir": "dist",
+    "types": ["node"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
