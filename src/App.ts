@@ -13,7 +13,7 @@ class App {
 
   constructor() {
     this.express = express()
-    this.webhookHandler = GithubWebhook({ path: '/webhook', secret: process.env.WEBHOOK_SECRET_TOKEN })
+    this.webhookHandler = GithubWebhook({ path: process.env.WEBHOOK_ENDPOINT || '/', secret: process.env.WEBHOOK_SECRET_TOKEN })
     this.middleware()
     this.routes()
   }
