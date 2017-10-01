@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/ashfurrow/twelease.svg?style=svg)](https://circleci.com/gh/ashfurrow/twelease)
+
 Twelease
 ========
 
