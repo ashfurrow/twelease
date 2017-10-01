@@ -6,6 +6,12 @@
   "author": "Ash Furrow <ash@ashfurrow.com>",
   "license": "MIT",
   "dependencies": {
+    "@types/node": "^8.0.31",
+    "@types/body-parser": "^1.16.5",
+    "@types/debug": "^0.0.30",
+    "@types/express": "^4.0.37",
+    "@types/jest": "^21.1.1",
+    "@types/morgan": "^1.7.33",
     "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
     "eslint": "^4.8.0",
@@ -45,12 +51,6 @@
     "testEnvironment": "node"
   },
   "devDependencies": {
-    "@types/body-parser": "^1.16.5",
-    "@types/debug": "^0.0.30",
-    "@types/express": "^4.0.37",
-    "@types/jest": "^21.1.1",
-    "@types/morgan": "^1.7.33",
-    "@types/node": "^8.0.31",
     "eslint-plugin-prettier": "^2.3.1",
     "gulp": "^3.9.1",
     "gulp-typescript": "^3.1.1",
