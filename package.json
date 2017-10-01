@@ -18,7 +18,7 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "prettier-project": "prettier --write '**/*.js'",
+    "prettier-project": "prettier --write '**/*.ts'",
     "type-check": "tsc --noEmit --pretty",
     "build": "tsc",
     "start": "node dist/index.js",
@@ -27,6 +27,9 @@
   },
   "lint-staged": {
     "*.{js,json,css}": ["prettier --write", "git add"]
+  },
+  "prettier": {
+    "semi": false
   },
   "jest": {
     "globals": {
