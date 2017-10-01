@@ -29,7 +29,7 @@ class App {
     this.webhookHandler.on('error', (err, req, res) => {
       console.error(err)
     })
-    this.webhookHandler.on('*', eventHandler)    
+    this.webhookHandler.on('*', eventHandler)
   }
 }
 

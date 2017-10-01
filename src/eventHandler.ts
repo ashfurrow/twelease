@@ -1,10 +1,11 @@
 import * as Mustache from 'mustache'
+import tweet from './twitter'
 
 const handleNewTag = (tagName: string, pusherName: string): void => {
   console.log(`${pusherName} pushed new tag ${tagName}`)
   const template = process.env['TWEET_MUSTACHE_TEMPLATE']
   const tweetText = Mustache.render(template, {tagName, pusherName})
-  console.log(`TweetTexting '${tweetText}'`)
+  tweet(tweetText)
 }
 
 const eventHandler = (event, repoName, data) => {

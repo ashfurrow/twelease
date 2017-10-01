@@ -23,6 +23,7 @@
     "node-ts": "^2.1.2",
     "path": "^0.12.7",
     "prettier": "^1.7.3",
+    "twit": "^2.2.9",
     "typescript": "^2.5.3"
   },
   "scripts": {
