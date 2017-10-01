@@ -2,40 +2,34 @@ import * as bodyParser from "body-parser"
 import * as express from "express"
 import * as logger from "morgan"
 import * as path from "path"
+import eventHandler from './eventHandler'
+import GithubWebHook from 'express-github-webhook'
 
 // Creates and configures an ExpressJS web server.
 class App {
   // ref to Express instance
   public express: express.Application
+  public webhookHandler: GithubWebHook
 
-  // Run configuration methods on the Express instance.
   constructor() {
     this.express = express()
+    this.webhookHandler = GithubWebHook({ path: '/webhook', secret: process.env['WEBHOOK_SECRET_TOKEN'] })
     this.middleware()
     this.routes()
   }
 
-  // Configure Express middleware.
   private middleware(): void {
     this.express.use(logger("dev"))
     this.express.use(bodyParser.json())
     this.express.use(bodyParser.urlencoded({ extended: false }))
+    this.express.use(this.webhookHandler)
   }
 
-  // Configure API endpoints.
   private routes(): void {
-    const router = express.Router()
-    router.get("/", (req, res, next) => {
-      res.json({
-        message: "Hello World!"
-      })
+    this.webhookHandler.on('error', function (err, req, res) {
+      console.error(err)
     })
-    router.post(process.env.WEBHOOK_ENDPOINT, (req, res, next) => {
-      res.json({
-        message: "Hello World!"
-      })
-    })
-    this.express.use("/", router)
+    this.webhookHandler.on('event', eventHandler)
   }
 }
 

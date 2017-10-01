@@ -539,6 +539,10 @@ bser@^2.0.0:
   dependencies:
     node-int64 "^0.4.0"
 
+buffer-equal-constant-time@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz#f8e71132f7ffe6e01a5c9697a4c6f3e48d5cc819"
+
 builtin-modules@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-1.1.1.tgz#270f076c5a72c02f5b65a47df94c5fe3a278892f"
@@ -1201,6 +1205,12 @@ expect@^21.2.1:
     jest-matcher-utils "^21.2.1"
     jest-message-util "^21.2.1"
     jest-regex-util "^21.2.0"
+
+express-github-webhook@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/express-github-webhook/-/express-github-webhook-1.0.6.tgz#a980ca0ab88b8cbda47b94a1e918c3f0a68f4cad"
+  dependencies:
+    buffer-equal-constant-time "^1.0.1"
 
 express@^4.16.1:
   version "4.16.1"
