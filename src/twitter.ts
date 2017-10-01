@@ -1,4 +1,4 @@
-import Twit from 'twit'
+import * as Twit from 'twit'
 
 const tweet = (tweetText: string) => {
   console.log(`Tweeting '${tweetText}'`)
