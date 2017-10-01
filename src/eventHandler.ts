@@ -2,7 +2,7 @@ import * as Mustache from 'mustache'
 
 const handleNewTag = (tagName: string, pusherName: string): void => {
   console.log(`${pusherName} pushed new tag ${tagName}`)
-  const template = process.env['TWEETText_MUSTACHE_TEMPLATE']
+  const template = process.env['TWEET_MUSTACHE_TEMPLATE']
   const tweetText = Mustache.render(template, {tagName, pusherName})
   console.log(`TweetTexting '${tweetText}'`)
 }
