@@ -13,6 +13,7 @@ const eventHandler = (event, repoName, data) => {
   if (event === 'create' && data.ref_type === 'tag') {
     const tagName: string = data.ref
     const pusherName: string = data.sender.login
+    console.log("repo", data.repository)
     const repoURL: string = `${data.repository.html_url}`
     handleNewTag(tagName, pusherName, repoURL)
   }
