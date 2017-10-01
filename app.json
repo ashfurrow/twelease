@@ -10,7 +10,9 @@
       "generator": "secret"
     },
     "TWEET_MUSTACHE_TEMPLATE": {
-      "description": "A Mustache template for tweet text"
+      "description": "A Mustache template for tweet text",
+      "value":
+        "{{pusherName}} just released {{tagName}} of Testing! {{repoURL}}/releases/tag/{{tagName}}"
     },
     "WEBHOOK_ENDPOINT": {
       "description": "The endpoint for GitHub WebHooks to use.",
