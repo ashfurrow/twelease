@@ -3,17 +3,17 @@ import * as express from "express"
 import * as logger from "morgan"
 import * as path from "path"
 import eventHandler from './eventHandler'
-import GithubWebHook from 'express-github-webhook'
+import * as GithubWebhook from 'express-github-webhook'
 
 // Creates and configures an ExpressJS web server.
 class App {
   // ref to Express instance
   public express: express.Application
-  public webhookHandler: GithubWebHook
+  public webhookHandler: GithubWebhook
 
   constructor() {
     this.express = express()
-    this.webhookHandler = GithubWebHook({ path: '/webhook', secret: process.env['WEBHOOK_SECRET_TOKEN'] })
+    this.webhookHandler = GithubWebhook({ path: '/webhook', secret: process.env.WEBHOOK_SECRET_TOKEN })
     this.middleware()
     this.routes()
   }
