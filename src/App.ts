@@ -29,10 +29,7 @@ class App {
     this.webhookHandler.on('error', (err, req, res) => {
       console.error(err)
     })
-    this.webhookHandler.on('event', eventHandler)
-    this.webhookHandler.on('*', (event, repo, data) => {
-      console.log("Received event", event, repo, data)
-    })    
+    this.webhookHandler.on('*', eventHandler)    
   }
 }
 
