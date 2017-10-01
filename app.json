@@ -1,0 +1,32 @@
+{
+  "name": "twelease",
+  "description": "Autotweeting new GitHub releases",
+  "repository": "https://github.com/ashfurrow/twelease",
+  "keywords": ["open source", "community", "github"],
+  "env": {
+    "WEBHOOK_SECRET_TOKEN": {
+      "description":
+        "A secret key for verifying the integrity of GitHub WebHook pushes.",
+      "generator": "secret"
+    },
+    "TWEET_MUSTACHE_TEMPLATE": {
+      "description": "A Mustache template for tweet text"
+    },
+    "WEBHOOK_ENDPOINT": {
+      "description": "The endpoint for GitHub WebHooks to use.",
+      "value": "/payload"
+    },
+    "TWITTER_CONSUMER_KEY": {
+      "description": "The endpoint for GitHub WebHooks to use."
+    },
+    "TWITTER_CONSUMER_SECRET": {
+      "description": "The endpoint for GitHub WebHooks to use."
+    },
+    "TWITTER_ACCESS_TOKEN": {
+      "description": "The endpoint for GitHub WebHooks to use."
+    },
+    "TWITTER_ACCESS_SECRET": {
+      "description": "The endpoint for GitHub WebHooks to use."
+    }
+  }
+}

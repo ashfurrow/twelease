@@ -1,7 +1,11 @@
 {
   "name": "twelease",
   "version": "0.0.1",
-  "description": "Autotweeting ne GitHub releases.",
+  "description": "Autotweeting new GitHub releases.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ashfurrow/twelease"
+  },
   "main": "index.ts",
   "author": "Ash Furrow <ash@ashfurrow.com>",
   "license": "MIT",

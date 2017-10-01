@@ -13,7 +13,9 @@ const tweet = (tweetText: string) => {
     if (error) {
       console.error('Problem posting to twitter: ', error)
     }
-    console.log(data)
+    if (data) {
+      console.log('Tweeted, id: ', data.id)
+    }
   })
 }
 
