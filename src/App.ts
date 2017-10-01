@@ -4,6 +4,7 @@ import * as logger from "morgan"
 import * as path from "path"
 import eventHandler from './eventHandler'
 import * as GithubWebhook from 'express-github-webhook'
+import tweet from './twitter'
 
 // Creates and configures an ExpressJS web server.
 class App {
@@ -29,7 +30,7 @@ class App {
     this.webhookHandler.on('error', (err, req, res) => {
       console.error(err)
     })
-    this.webhookHandler.on('*', eventHandler)
+    this.webhookHandler.on('*', eventHandler(tweet))
   }
 }
 
