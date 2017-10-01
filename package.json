@@ -24,7 +24,8 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "lint": "tslint src/**/*.ts",
-    "prettier": "prettier"
+    "prettier": "prettier",
+    "postinstall": "tsc"
   },
   "lint-staged": {
     "*.{js,json,css}": ["prettier --write", "git add"]
