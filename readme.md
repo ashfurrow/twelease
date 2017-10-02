@@ -14,7 +14,7 @@ I recommend using Heroku. Smash the deploy button!
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-Note that Heroku creates a `WEBHOOK_SECRET_TOKEN`. Copy that – we'll need it to set up our GitHub webhook.
+Note that Heroku creates a `WEBHOOK_SECRET_TOKEN`. Copy that – we'll need it to set up our GitHub webhook. You'll be prompted to enter in the tokens you got from Twitter, too.
 
 For the tweet template, we use Mustache. Make sure to use triple-braces to avoid HTML escaping. There's a default provided for you.
 
