@@ -41,7 +41,7 @@
     "postinstall": "npm run build"
   },
   "lint-staged": {
-    "*.{js,json,css}": ["prettier --write", "git add"]
+    "*.{js,json,css}": ["yarn prettier --write", "git add"]
   },
   "prettier": {
     "semi": false
