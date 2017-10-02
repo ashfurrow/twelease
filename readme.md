@@ -10,7 +10,7 @@ Setup
 
 Setup takes about 5 minutes. As the Twitter account you want the tweets to be sent from, you need to [register a new Twitter application](https://apps.twitter.com/app/new) to receive OAuth credentials, as well as generate an access token and secret for your account. With those four tokens in hand, next we'll deploy the server.
 
-I recommend using Heroku. Smash the button below to deploy, providing the Twitter tokens we retrieved above.
+I recommend using Heroku. Smash the deploy button!
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
