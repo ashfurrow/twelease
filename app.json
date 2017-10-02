@@ -19,16 +19,16 @@
       "value": "/payload"
     },
     "TWITTER_CONSUMER_KEY": {
-      "description": "The endpoint for GitHub WebHooks to use."
+      "description": "Your twitter consumer key for your app."
     },
     "TWITTER_CONSUMER_SECRET": {
-      "description": "The endpoint for GitHub WebHooks to use."
+      "description": "The twitter consumer secret for your app."
     },
     "TWITTER_ACCESS_TOKEN": {
-      "description": "The endpoint for GitHub WebHooks to use."
+      "description": "The user's twitter access token."
     },
     "TWITTER_ACCESS_SECRET": {
-      "description": "The endpoint for GitHub WebHooks to use."
+      "description": "The user's twitter access token."
     }
   }
 }

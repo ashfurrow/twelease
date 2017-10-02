@@ -58,6 +58,7 @@
     "testEnvironment": "node"
   },
   "devDependencies": {
+    "@types/mustache": "^0.8.30",
     "eslint-plugin-prettier": "^2.3.1",
     "gulp": "^3.9.1",
     "gulp-typescript": "^3.1.1",

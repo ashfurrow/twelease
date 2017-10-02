@@ -16,5 +16,6 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "dist": true
-  }
+  },
+  "cSpell.words": ["repo", "webhook"]
 }

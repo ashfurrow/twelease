@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/ashfurrow/twelease.svg?style=svg)](https://circleci.com/gh/ashfurrow/twelease)
+
 Twelease
 ========
 
@@ -8,11 +10,11 @@ Setup
 
 Setup takes about 5 minutes. As the Twitter account you want the tweets to be sent from, you need to [register a new Twitter application](https://apps.twitter.com/app/new) to receive OAuth credentials, as well as generate an access token and secret for your account. With those four tokens in hand, next we'll deploy the server.
 
-I recommend using Heroku. Smash the button below to deploy, providing the Twitter tokens we retrieved above.
+I recommend using Heroku. Smash the deploy button!
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-Note that Heroku creates a `WEBHOOK_SECRET_TOKEN`. Copy that – we'll need it to set up our GitHub webhook.
+Note that Heroku creates a `WEBHOOK_SECRET_TOKEN`. Copy that – we'll need it to set up our GitHub webhook. You'll be prompted to enter in the tokens you got from Twitter, too.
 
 For the tweet template, we use Mustache. Make sure to use triple-braces to avoid HTML escaping. There's a default provided for you.
 
