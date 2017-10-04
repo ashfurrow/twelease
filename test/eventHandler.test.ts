@@ -1,13 +1,18 @@
-jest.mock('../src/twitter.ts', () => ({default: () => {}}))
+jest.mock('../src/twitter.ts')
+import tweet from "../src/twitter"
+
 import eventHandler from '../src/eventHandler'
 
 beforeAll(() => {
   process.env.TWEET_MUSTACHE_TEMPLATE = "{{{pusherName}}} just released {{{tagName}}} of {{{repoName}}}! {{{repoURL}}}/releases/tag/{{{tagName}}}"
 })
 
+beforeEach(() => {
+  (tweet as any).mockReset()
+})
+
 it('invokes tweet', () => {
-  const tweet = jest.fn()
-  eventHandler(tweet)('create', 'test-repo', {
+  eventHandler('create', 'test-repo', {
     ref: '0.0.1',
     ref_type: 'tag',
     sender: {
@@ -22,8 +27,7 @@ it('invokes tweet', () => {
 })
 
 it('does not invoke tweet with non-create event', () => {
-  const tweet = jest.fn()
-  eventHandler(tweet)('push', 'test-repo', {
+  eventHandler('push', 'test-repo', {
     ref: '0.0.1',
     ref_type: 'tag',
     sender: {
@@ -38,8 +42,7 @@ it('does not invoke tweet with non-create event', () => {
 })
 
 it('does not invoke tweet with a branch creation even', () => {
-  const tweet = jest.fn()
-  eventHandler(tweet)('create', 'test-repo', {
+  eventHandler('create', 'test-repo', {
     ref: 'feature-branch',
     ref_type: 'branch',
     sender: {

@@ -1,37 +1,26 @@
 import * as bodyParser from "body-parser"
-import * as express from "express"
+import * as Express from "express"
 import * as logger from "morgan"
 import * as path from "path"
 import eventHandler from './eventHandler'
 import * as GithubWebhook from 'express-github-webhook'
-import tweet from './twitter'
 
-// Creates and configures an ExpressJS web server.
-class App {
-  // ref to Express instance
-  public express: express.Application
-  public webhookHandler: GithubWebhook
+const express = Express()
+express.use(logger("dev"))
+express.use(bodyParser.json())
+express.use(bodyParser.urlencoded({ extended: false }))
 
-  constructor() {
-    this.express = express()
-    this.webhookHandler = GithubWebhook({ path: process.env.WEBHOOK_ENDPOINT || '/', secret: process.env.WEBHOOK_SECRET_TOKEN })
-    this.middleware()
-    this.routes()
-  }
+const webhookHandler = GithubWebhook({
+  path: process.env.WEBHOOK_ENDPOINT || '/',
+  secret: process.env.WEBHOOK_SECRET_TOKEN
+})
 
-  private middleware(): void {
-    this.express.use(logger("dev"))
-    this.express.use(bodyParser.json())
-    this.express.use(bodyParser.urlencoded({ extended: false }))
-    this.express.use(this.webhookHandler)
-  }
+express.use(webhookHandler)
 
-  private routes(): void {
-    this.webhookHandler.on('error', (err, req, res) => {
-      console.error(err)
-    })
-    this.webhookHandler.on('*', eventHandler(tweet))
-  }
-}
+webhookHandler.on('error', (err, req, res) => {
+  console.error(err)
+})
 
-export default new App().express
+webhookHandler.on('*', eventHandler)
+
+export default express

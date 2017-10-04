@@ -46,10 +46,10 @@
   "prettier": {
     "semi": false
   },
+  "ts-jest": {
+    "tsConfigFile": "tsconfig.json"
+  },
   "jest": {
-    "globals": {
-      "__TS_CONFIG__": "tsconfig.json"
-    },
     "moduleFileExtensions": ["ts", "tsx", "js"],
     "transform": {
       "^.+\\.(ts|tsx)$": "./node_modules/ts-jest/preprocessor.js"
