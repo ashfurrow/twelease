@@ -4,7 +4,6 @@ import tweet from './twitter'
 const eventHandler = (event, repoName, data) => {
   console.log(`Received event '${event}' on ${repoName}.`)
   if (event === 'create' && data.ref_type === 'tag') {
-    console.log('wtf')
     const tagName: string = data.ref
     const pusherName: string = data.sender.login
     const repoURL: string = `${data.repository.html_url}`
