@@ -1,17 +1,15 @@
+jest.mock('twit')
+import * as Twitter from 'twit'
+
 import tweet from "../src/twitter"
 
-let twitMock
-let post
-
-beforeEach(() => {
-  post = jest.fn()
-  twitMock = jest.fn()
-})
-
 it("posts to twitter", () => {
-  twitMock.post = post
+  const post = jest.fn()
+  const t: jest.Mock<{}> = Twitter
 
-  tweet('hi there', () => twitMock)
+  t.mockImplementation((a) => ({ post }))
 
-  expect(post).toHaveBeenCalledWith('statuses/update', {status: 'hi there'}, expect.any(Function))
+  tweet('hi there')
+
+  expect(post).toHaveBeenCalledWith('statuses/update', { status: 'hi there' }, expect.any(Function))
 })

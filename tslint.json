@@ -8,6 +8,7 @@
     "no-trailing-whitespace": true,
     "object-literal-sort-keys": false,
     "no-empty": false,
-    "max-line-length": 120
+    "max-line-length": 120,
+    "comment-format": false
   }
 }
