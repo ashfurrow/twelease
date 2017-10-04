@@ -5,7 +5,7 @@ import tweet from "../src/twitter"
 
 it("posts to twitter", () => {
   const post = jest.fn()
-  const t: jest.Mock<{}> = Twitter
+  const t: any = Twitter
 
   t.mockImplementation((a) => ({ post }))
 
