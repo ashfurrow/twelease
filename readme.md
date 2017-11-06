@@ -16,7 +16,7 @@ I recommend using Heroku. Smash that deploy button!
 
 Note that Heroku creates a `WEBHOOK_SECRET_TOKEN`. Copy that – we'll need it to set up our GitHub webhook. You'll be prompted to enter in the tokens you got from Twitter, too.
 
-For the tweet template, we use Mustache. Make sure to use triple-braces to avoid HTML escaping. There's a default provided for you, and you can customize it later in the Heroku environment variables settings.
+For the tweet template, we use Mustache. Make sure to use triple-braces to avoid HTML escaping, and if you want a newline you need to actually press the return key (and *not* include `\n`). There is a default provided for you, and you can customize it later in the Heroku environment variables settings.
 
 Got to the Settings page for whatever repo you want to add this integration to. Select the "Webhooks" section and click "Add Webhook". *Important*: for content type, select `application/json`. Paste in the secret from Heroku, as well as the Heroku URL. The URL should end with `/payload`, so if your Heroku URL is `http://example.herokuapp.com/`, then enter `http://example.herokuapp.com/payload` into GitHub.
 
